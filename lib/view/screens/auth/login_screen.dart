@@ -3,6 +3,7 @@
 import 'package:blinkid/resources/constants/app_colors.dart';
 import 'package:blinkid/resources/constants/images_path.dart';
 import 'package:blinkid/resources/utils/routes.dart';
+import 'package:blinkid/view/screens/auth/verify_otp_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -133,7 +134,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             onChanged: (value){
                               if(value.length == 10){
                                 /// call your api here
-                                Navigator.pushNamed(context, Routes.verifyOTPScreen);
+                                // Navigator.pushNamed(context, Routes.verifyOTPScreen,);
+                                Navigator.push(context, MaterialPageRoute(
+                                    builder: (context) => VerifyOtpScreen(phoneNumber: '+92$value',)));
                               }
                             },
 

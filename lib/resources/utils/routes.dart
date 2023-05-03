@@ -1,6 +1,7 @@
 
 import 'package:blinkid/view/screens/auth/login_screen.dart';
 import 'package:blinkid/view/screens/auth/verify_otp_screen.dart';
+import 'package:blinkid/view/screens/auth/welcome_screen.dart';
 import 'package:blinkid/view/screens/splash_screens/location_access_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class Routes {
   static const String locationAccessScreen = 'location_access_screen';
   static const String loginScreen = 'login_screen';
   static const String verifyOTPScreen = 'verify_otp_screen';
+  static const String welcomeScreen = 'welcome_screen';
 
 
   /// Route is data type
@@ -31,6 +33,9 @@ class Routes {
         case verifyOTPScreen:
         return MaterialPageRoute(
             builder: (BuildContext context) => VerifyOtpScreen());
+        case welcomeScreen:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => WelcomeScreen());
 
         /// default
       default:
