@@ -1,12 +1,16 @@
 
 import 'dart:io';
 
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:blinkid/resources/constants/images_path.dart';
 import 'package:blinkid/resources/utils/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
+import 'package:page_transition/page_transition.dart';
+
+import 'location_access_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -14,31 +18,44 @@ class SplashScreen extends StatefulWidget {
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
-//
-// class _SplashScreenState extends State<SplashScreen> {
-//
-//   @override
-//   void initState() {
-//     // TODO: implement initState
-//     super.initState();
-//     Future.delayed(Duration(seconds: 5), (){
-//       Navigator.pushNamed(context, Routes.locationAccessScreen);
-//     });
-//
-//   }
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Container(
-//         height: MediaQuery.of(context).size.height,
-//         width: MediaQuery.of(context).size.width,
-//         decoration: const BoxDecoration(
-//         ),
-//         child: Image.asset(AppImages.splashImage,  fit: BoxFit.cover,),
-//       ),
-//     );
-//   }
-// }
+
+class _SplashScreenState extends State<SplashScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // Future.delayed(Duration(seconds: 5), (){
+    //   Navigator.pushNamed(context, Routes.locationAccessScreen);
+    // });
+
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        decoration: const BoxDecoration(
+        ),
+        // child: Image.asset(AppImages.splashImage,  fit: BoxFit.cover,),
+        child: AnimatedSplashScreen(
+          splash: Image.asset(
+            AppImages.splashImage,
+            fit: BoxFit.cover,
+          ),
+          splashIconSize: double.infinity,
+          splashTransition: SplashTransition.slideTransition,
+
+          backgroundColor: Colors.white,
+          nextScreen: const LocationAccessScreen(),
+          duration: 4000,
+        ),
+
+      ),
+    );
+  }
+}
 
 
 
@@ -275,43 +292,42 @@ class SplashScreen extends StatefulWidget {
 
 
 /// 2
-
-class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin{
-  late AnimationController animationController;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    animationController = AnimationController(vsync: this,);
-        Future.delayed(Duration(seconds: 5), (){
-      Navigator.pushNamed(context, Routes.locationAccessScreen);
-    });
-  }
-  @override
-  void dispose() {
-    animationController.dispose();
-    // TODO: implement dispose
-    super.dispose();
-
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child:  Lottie.asset(
-          // 'https://assets1.lottiefiles.com/packages/lf20_ATMEN2.json',
-            'assets/animation/splash_animation.json',
-
-            controller: animationController,
-            onLoaded: (composition){
-              animationController.duration = composition.duration;
-              animationController.repeat();
-            },
-            repeat: true
-        ),
-      ),
-    );
-  }
-}
+// class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin{
+//   late AnimationController animationController;
+//
+//   @override
+//   void initState() {
+//     // TODO: implement initState
+//     super.initState();
+//     animationController = AnimationController(vsync: this,);
+//         Future.delayed(Duration(seconds: 5), (){
+//       Navigator.pushNamed(context, Routes.locationAccessScreen);
+//     });
+//   }
+//   @override
+//   void dispose() {
+//     animationController.dispose();
+//     // TODO: implement dispose
+//     super.dispose();
+//
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child:  Lottie.asset(
+//           // 'https://assets1.lottiefiles.com/packages/lf20_ATMEN2.json',
+//             'assets/animation/splash_animation.json',
+//
+//             controller: animationController,
+//             onLoaded: (composition){
+//               animationController.duration = composition.duration;
+//               animationController.repeat();
+//             },
+//             repeat: true
+//         ),
+//       ),
+//     );
+//   }
+// }
