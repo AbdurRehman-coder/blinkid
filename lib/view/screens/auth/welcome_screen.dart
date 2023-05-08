@@ -351,7 +351,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     ),
                     onPressed: () {
                       /// Navigate to login screen
-                      Navigator.pushNamed(context, Routes.loginScreen);
+                      Navigator.pushNamed(context, Routes.initialHomeScreen);
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,

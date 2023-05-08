@@ -1,7 +1,9 @@
 
+import 'package:blinkid/view/express/express_home_screen.dart';
 import 'package:blinkid/view/screens/auth/login_screen.dart';
 import 'package:blinkid/view/screens/auth/verify_otp_screen.dart';
 import 'package:blinkid/view/screens/auth/welcome_screen.dart';
+import 'package:blinkid/view/screens/home/initial_screen.dart';
 import 'package:blinkid/view/screens/splash_screens/location_access_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +18,8 @@ class Routes {
   static const String loginScreen = 'login_screen';
   static const String verifyOTPScreen = 'verify_otp_screen';
   static const String welcomeScreen = 'welcome_screen';
+  static const String initialHomeScreen = 'initial_home_screen';
+  static const String expressHomeScreen = 'express_home_screen';
 
 
   /// Route is data type
@@ -23,7 +27,7 @@ class Routes {
     switch (settings.name) {
       case splash:
         return MaterialPageRoute(
-            builder: (BuildContext context) => const SplashScreen());
+            builder: (BuildContext context) => SplashScreen());
       case locationAccessScreen:
         return MaterialPageRoute(
             builder: (BuildContext context) => const LocationAccessScreen());
@@ -36,6 +40,12 @@ class Routes {
         case welcomeScreen:
         return MaterialPageRoute(
             builder: (BuildContext context) => WelcomeScreen());
+        case initialHomeScreen:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => InitialHomeScreen());
+        case expressHomeScreen:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => ExpressHomeScreen());
 
         /// default
       default:

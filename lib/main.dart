@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: SplashScreen(),
       initialRoute: Routes.splash,
+      // initialRoute: Routes.welcomeScreen,
       onGenerateRoute: Routes.generateRoute,
     );
   }

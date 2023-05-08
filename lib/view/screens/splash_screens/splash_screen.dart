@@ -13,49 +13,125 @@ import 'package:page_transition/page_transition.dart';
 import 'location_access_screen.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
-
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
+  AnimationController? _animationController;
+  Animation<double>? _animation;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    // Future.delayed(Duration(seconds: 5), (){
-    //   Navigator.pushNamed(context, Routes.locationAccessScreen);
-    // });
+    _animationController =
+    AnimationController(vsync: this, duration: Duration(seconds: 1))
+      ..repeat(reverse: true);
+    _animation = Tween(begin: -50.0, end: 50.0).animate(_animationController!);
 
+    Future.delayed(Duration(seconds: 5), () {
+      Navigator.pushNamed(context, Routes.loginScreen);
+    });
   }
+
+  @override
+  void dispose() {
+    _animationController?.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AnimatedBuilder(
+              animation: _animation!,
+              builder: (context, child) {
+                return Transform.translate(
+                  offset: Offset(0, _animation!.value),
+                  child: child,
+                );
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    AppImages.blinkidLogo,
+                    height: 50,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  // Text(
+                  //   'My App',
+                  //   style: TextStyle(
+                  //     color: Colors.white,
+                  //     fontSize: 28,
+                  //     fontWeight: FontWeight.bold,
+                  //     fontFamily: 'Inter',
+                  //   ),
+                  // ),
+                ],
+              ),
+            ),
+          ],
         ),
-        // child: Image.asset(AppImages.splashImage,  fit: BoxFit.cover,),
-        child: AnimatedSplashScreen(
-          splash: Image.asset(
-            AppImages.splashImage,
-            fit: BoxFit.cover,
-          ),
-          splashIconSize: double.infinity,
-          splashTransition: SplashTransition.slideTransition,
-
-          backgroundColor: Colors.white,
-          nextScreen: const LocationAccessScreen(),
-          duration: 4000,
-        ),
-
       ),
     );
   }
 }
+
+
+///======
+// class SplashScreen extends StatefulWidget {
+//   const SplashScreen({Key? key}) : super(key: key);
+//
+//   @override
+//   State<SplashScreen> createState() => _SplashScreenState();
+// }
+//
+// class _SplashScreenState extends State<SplashScreen> {
+//
+//   @override
+//   void initState() {
+//     // TODO: implement initState
+//     super.initState();
+//     // Future.delayed(Duration(seconds: 5), (){
+//     //   Navigator.pushNamed(context, Routes.locationAccessScreen);
+//     // });
+//
+//   }
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Container(
+//         height: MediaQuery.of(context).size.height,
+//         width: MediaQuery.of(context).size.width,
+//         decoration: const BoxDecoration(
+//         ),
+//         // child: Image.asset(AppImages.splashImage,  fit: BoxFit.cover,),
+//         child: AnimatedSplashScreen(
+//           splash: Image.asset(
+//             AppImages.splashImage,
+//             fit: BoxFit.cover,
+//           ),
+//           splashIconSize: double.infinity,
+//           splashTransition: SplashTransition.slideTransition,
+//
+//           backgroundColor: Colors.white,
+//           nextScreen: const LocationAccessScreen(),
+//           duration: 4000,
+//         ),
+//
+//       ),
+//     );
+//   }
+// }
 
 
 
