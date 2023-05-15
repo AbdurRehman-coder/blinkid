@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen>
     _animation = Tween(begin: -50.0, end: 50.0).animate(_animationController!);
 
     Future.delayed(Duration(seconds: 5), () {
-      Navigator.pushNamed(context, Routes.loginScreen);
+      Navigator.pushNamed(context, Routes.locationAccessScreen);
     });
   }
 

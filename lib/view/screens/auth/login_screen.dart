@@ -61,10 +61,27 @@ class _LoginScreenState extends State<LoginScreen> {
             // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset('assets/images/login_screen_image.png',
-              height: size.height * 0.5,
-              width: size.width,
-                fit: BoxFit.cover,
+              Stack(
+                children: [
+                  Image.asset('assets/images/login_screen_image.png',
+                  height: size.height * 0.5,
+                  width: size.width,
+                    fit: BoxFit.cover,
+                  ),
+                  Positioned(
+                      top: 30,
+                      right: 20,
+                      child: InkWell(
+                          onTap: (){
+                            Navigator.pushNamedAndRemoveUntil(
+                              context,
+                              Routes.welcomeScreen,
+                                  (Route<dynamic> route) => false,
+                            );
+
+                          },
+                          child: Icon(Icons.cancel_outlined, size: 30, color: Colors.red,))),
+                ],
               ),
               SizedBox(height: 5,),
               Padding(

@@ -1,4 +1,6 @@
 import 'package:blinkid/resources/constants/app_colors.dart';
+import 'package:blinkid/view/express/browse_categories.dart';
+import 'package:blinkid/view/widgets/custom_drawer_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -29,10 +31,13 @@ class _ExpressHomeScreenState extends State<ExpressHomeScreen> {
     ImageCard(imageAsset: AppImages.schoolCatImage, name: 'School'),
     ImageCard(imageAsset: AppImages.footwearCatImage, name: 'Footwear'),
   ];
+
+  bool isBrowseCategoriesShow = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: AppColors.whiteLightBackground,
+      drawer: CustomDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -160,11 +165,8 @@ class _ExpressHomeScreenState extends State<ExpressHomeScreen> {
                         crossAxisSpacing: 10.0,
                       ),
                       itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                          decoration: BoxDecoration(
+                        return Card(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(08)
-                          ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -192,9 +194,13 @@ class _ExpressHomeScreenState extends State<ExpressHomeScreen> {
                         color: AppColors.primaryBlackColor
                       ),),
                     SizedBox(height: 08,),
-                    ElevatedButton(
+                    isBrowseCategoriesShow == false
+                   ? ElevatedButton(
                       onPressed: () {
                         // Add your button's functionality here
+                        setState(() {
+                          isBrowseCategoriesShow = true;
+                        });
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.blue,
@@ -209,8 +215,16 @@ class _ExpressHomeScreenState extends State<ExpressHomeScreen> {
                             color: Colors.white
                         ),
                       ),
-                    ),
+                    )
+                    : Container(),
                     SizedBox(height: 14,),
+
+                    isBrowseCategoriesShow
+                    ? BrowseCategoriesScreen()
+                        : Container()
+
+
+
                   ],
                 ),
               ),

@@ -23,7 +23,26 @@ class _LocationAccessScreenState extends State<LocationAccessScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(AppImages.deliveryAddress),
+
+              Stack(
+                children: [
+                  Image.asset(AppImages.deliveryAddress),
+                  Positioned(
+                    top: 30,
+                      right: 20,
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            Routes.loginScreen,
+                                (Route<dynamic> route) => false,
+                          );
+
+                        },
+                          child: Icon(Icons.cancel_outlined, size: 30, color: Colors.red,))),
+
+                ],
+              ),
 
               SizedBox(height: 12,),
               Padding(
