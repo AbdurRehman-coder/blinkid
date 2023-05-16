@@ -22,6 +22,9 @@ class AppImages {
   static const String footwearCatImage = 'assets/images/foot_wear.png';
   static const String headphoneImage = 'assets/images/headphone.png';
   static const String bagImage = 'assets/images/big_image.png';
+  static const String babyganicsImage = 'assets/images/babyganics.png';
+  static const String babyMagicImage = 'assets/images/baby_magic.png';
+  static const String aventImage = 'assets/images/avent.png';
 
 
 

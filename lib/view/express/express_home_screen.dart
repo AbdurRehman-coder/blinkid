@@ -138,12 +138,12 @@ class _ExpressHomeScreenState extends State<ExpressHomeScreen> {
 
             Container(
               color: AppColors.whiteLightBackground,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 16.0, right: 16, top: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0, right: 16, top: 20),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
@@ -155,7 +155,10 @@ class _ExpressHomeScreenState extends State<ExpressHomeScreen> {
                         Icon(Icons.arrow_forward),
                       ],
                     ),
-                    GridView.builder(
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0, right: 16,),
+                    child: GridView.builder(
                       shrinkWrap: true,
                       primary: false,
                       itemCount: imageCards.length,
@@ -187,46 +190,61 @@ class _ExpressHomeScreenState extends State<ExpressHomeScreen> {
                         );
                       },
                     ),
-                    SizedBox(height: 35,),
-                    Text('Couldn’t find your product?',
-                      style: AppTextStyle.gilroyLight.copyWith(
-                        fontSize: 18,
-                        color: AppColors.primaryBlackColor
-                      ),),
-                    SizedBox(height: 08,),
-                    isBrowseCategoriesShow == false
-                   ? ElevatedButton(
-                      onPressed: () {
-                        // Add your button's functionality here
-                        setState(() {
-                          isBrowseCategoriesShow = true;
-                        });
-                      },
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.blue,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
+                  ),
+                  SizedBox(height: 35,),
+
+                  isBrowseCategoriesShow == false
+                      ? Padding(
+                    padding: const EdgeInsets.only(left: 16.0, right: 16,),
+
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                        Text('Couldn’t find your product?',
+                          style: AppTextStyle.gilroyLight.copyWith(
+                              fontSize: 18,
+                              color: AppColors.primaryBlackColor
+                          ),),
+                        SizedBox(height: 08,),
+                        ElevatedButton(
+                          onPressed: () {
+                            // Add your button's functionality here
+                            setState(() {
+                              isBrowseCategoriesShow = true;
+                            });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.blue,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                          child: Text(
+                            'Browse Categories',
+                            style: AppTextStyle.gilroyLight.copyWith(
+                                fontSize: 18,
+                                color: Colors.white
+                            ),
+                          ),
+                        )
+                    ],
+                  ),
+                      )
+                  : Container(),
+                  SizedBox(height: 5,),
+
+                  isBrowseCategoriesShow
+                  ? Container(
+                    width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colors.white
                       ),
-                      child: Text(
-                        'Browse Categories',
-                        style: AppTextStyle.gilroyLight.copyWith(
-                            fontSize: 18,
-                            color: Colors.white
-                        ),
-                      ),
-                    )
-                    : Container(),
-                    SizedBox(height: 14,),
-
-                    isBrowseCategoriesShow
-                    ? BrowseCategoriesScreen()
-                        : Container()
+                      child: BrowseCategoriesScreen())
+                      : Container()
 
 
 
-                  ],
-                ),
+                ],
               ),
             ),
           ],
