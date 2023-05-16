@@ -5,11 +5,10 @@ import 'package:blinkid/resources/constants/images_path.dart';
 import 'package:blinkid/view/widgets/product_card_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../../resources/constants/text_styles.dart';
 
-import '../../resources/constants/text_styles.dart';
-
-class BrowseCategoriesScreen extends StatelessWidget {
-  const BrowseCategoriesScreen({Key? key}) : super(key: key);
+class MartCategoriesScreen extends StatelessWidget {
+  const MartCategoriesScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,9 +43,9 @@ class BrowseCategoriesScreen extends StatelessWidget {
               Row(children: [
                 SizedBox(height: 12,),
                 Expanded(
-                    child: ProductCard(image: AppImages.bagImage,)),
+                    child: ExpressProductCard(image: AppImages.bagImage,)),
                 Expanded(
-                    child: ProductCard(image: AppImages.headphoneImage,)),
+                    child: ExpressProductCard(image: AppImages.headphoneImage,)),
               ],),
             ],
           ),
@@ -82,9 +81,9 @@ class BrowseCategoriesScreen extends StatelessWidget {
               Row(children: [
                 SizedBox(height: 12,),
                 Expanded(
-                    child: ProductCard(image: AppImages.bagImage,)),
+                    child: ExpressProductCard(image: AppImages.bagImage,)),
                 Expanded(
-                    child: ProductCard(image: AppImages.headphoneImage,)),
+                    child: ExpressProductCard(image: AppImages.headphoneImage,)),
               ],),
             ],
           ),
@@ -156,18 +155,18 @@ class BrowseCategoriesScreen extends StatelessWidget {
               Row(children: [
                 SizedBox(height: 12,),
                 Expanded(
-                    child: ProductCard(image: AppImages.bagImage,)),
+                    child: ExpressProductCard(image: AppImages.bagImage,)),
                 Expanded(
-                    child: ProductCard(image: AppImages.headphoneImage,)),
+                    child: ExpressProductCard(image: AppImages.headphoneImage,)),
               ],),
 
               SizedBox(height: 08,),
               Row(children: [
                 SizedBox(height: 12,),
                 Expanded(
-                    child: ProductCard(image: AppImages.bagImage,)),
+                    child: ExpressProductCard(image: AppImages.bagImage,)),
                 Expanded(
-                    child: ProductCard(image: AppImages.headphoneImage,)),
+                    child: ExpressProductCard(image: AppImages.headphoneImage,)),
               ],),
             ],
           ),

@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 
 import '../../resources/constants/text_styles.dart';
 
-class ProductCard extends StatelessWidget {
+class ExpressProductCard extends StatelessWidget {
   String? image;
-  ProductCard({this.image});
+  ExpressProductCard({this.image});
   @override
   Widget build(BuildContext context) {
     return Card(

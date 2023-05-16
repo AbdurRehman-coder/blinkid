@@ -1,20 +1,22 @@
+
 import 'package:blinkid/resources/constants/app_colors.dart';
-import 'package:blinkid/view/express/browse_categories.dart';
+import 'package:blinkid/view/screens/mart/mart_categories.dart';
 import 'package:blinkid/view/widgets/custom_drawer_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../resources/constants/images_path.dart';
-import '../../resources/constants/text_styles.dart';
+import '../../../resources/constants/images_path.dart';
+import '../../../resources/constants/text_styles.dart';
+import '../express/browse_categories.dart';
 
-class ExpressHomeScreen extends StatefulWidget {
-  const ExpressHomeScreen({Key? key}) : super(key: key);
+class MartHomeScreen extends StatefulWidget {
+  const MartHomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<ExpressHomeScreen> createState() => _ExpressHomeScreenState();
+  State<MartHomeScreen> createState() => _MartHomeScreenState();
 }
 
-class _ExpressHomeScreenState extends State<ExpressHomeScreen> {
+class _MartHomeScreenState extends State<MartHomeScreen> {
   TextEditingController _searchController = TextEditingController();
 
   final List<ImageCard> imageCards = [
@@ -169,80 +171,31 @@ class _ExpressHomeScreenState extends State<ExpressHomeScreen> {
                       ),
                       itemBuilder: (BuildContext context, int index) {
                         return Card(
-                            color: Colors.white,
+                          color: Colors.white,
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                            Image.asset(
-                              imageCards[index].imageAsset,
-                              width: 50,
-                              height: 50,
-                              fit: BoxFit.cover,
-                            ),
-                            SizedBox(height: 5,),
-                            Text(imageCards[index].name,
-                              style: AppTextStyle.gilroyLight.copyWith(
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),),
-                          ]),
+                                Image.asset(
+                                  imageCards[index].imageAsset,
+                                  width: 50,
+                                  height: 50,
+                                  fit: BoxFit.cover,
+                                ),
+                                SizedBox(height: 5,),
+                                Text(imageCards[index].name,
+                                  style: AppTextStyle.gilroyLight.copyWith(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                  ),),
+                              ]),
                         );
                       },
                     ),
                   ),
                   SizedBox(height: 35,),
 
-                  isBrowseCategoriesShow == false
-                      ? Padding(
-                    padding: const EdgeInsets.only(left: 16.0, right: 16,),
-
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                        Text('Couldn’t find your product?',
-                          style: AppTextStyle.gilroyLight.copyWith(
-                              fontSize: 18,
-                              color: AppColors.primaryBlackColor
-                          ),),
-                        SizedBox(height: 08,),
-                        ElevatedButton(
-                          onPressed: () {
-                            // Add your button's functionality here
-                            setState(() {
-                              isBrowseCategoriesShow = true;
-                            });
-                          },
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.blue,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
-                          child: Text(
-                            'Browse Categories',
-                            style: AppTextStyle.gilroyLight.copyWith(
-                                fontSize: 18,
-                                color: Colors.white
-                            ),
-                          ),
-                        )
-                    ],
-                  ),
-                      )
-                  : Container(),
-                  SizedBox(height: 5,),
-
-                  isBrowseCategoriesShow
-                  ? Container(
-                    width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white
-                      ),
-                      child: BrowseCategoriesScreen())
-                      : Container()
-
-
+                  MartCategoriesScreen(),
 
                 ],
               ),
