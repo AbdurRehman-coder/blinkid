@@ -4,6 +4,7 @@ import 'package:blinkid/resources/constants/text_styles.dart';
 import 'package:blinkid/resources/utils/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:location/location.dart';
 
 class LocationAccessScreen extends StatefulWidget {
   const LocationAccessScreen({Key? key}) : super(key: key);
@@ -13,6 +14,22 @@ class LocationAccessScreen extends StatefulWidget {
 }
 
 class _LocationAccessScreenState extends State<LocationAccessScreen> {
+
+  PermissionStatus? _permissionGranted;
+  Location location = new Location();
+
+  requestLocationpermission() async {
+    _permissionGranted = await location.hasPermission();
+    if (_permissionGranted == PermissionStatus.denied) {
+      _permissionGranted = await location.requestPermission();
+      if (_permissionGranted != PermissionStatus.granted) {
+        return;
+      }
+    }
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -77,7 +94,8 @@ class _LocationAccessScreenState extends State<LocationAccessScreen> {
                   ),
                   onPressed: () {
                     /// Navigate to login screen
-                    Navigator.pushNamed(context, Routes.loginScreen);
+               requestLocationpermission();
+                    // Navigator.pushNamed(context, Routes.loginScreen);
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

@@ -25,6 +25,14 @@ class AppImages {
   static const String babyganicsImage = 'assets/images/babyganics.png';
   static const String babyMagicImage = 'assets/images/baby_magic.png';
   static const String aventImage = 'assets/images/avent.png';
+  static const String pinkbag = 'assets/images/pinkbag.png';
+  static const String camaflougebag = 'assets/images/camafllougebag.png';
+
+  ///Cateaories Images
+  static const String colorNicker = 'assets/images/color_nicker.png';
+  static const String whiteNicker = 'assets/images/white_nicker.png';
+  static const String violetPamper = 'assets/images/violet_pamper.png';
+  static const String violetNicker = 'assets/images/violet_nicker.png';
 
 
 
@@ -33,4 +41,12 @@ class AppImages {
   static const String pakistanLogo = 'assets/logos/pakistan_logo.png';
   static const String facebookLogo = 'assets/logos/facebook_logo.png';
   static const String googleLogo = 'assets/logos/google_logo.png';
+
+
+  /// Icons
+  static const String filter = 'assets/icons/Vector.png';
+  static const String squarebox = 'assets/icons/squarebox.png';
+  static const String verticalsquare = 'assets/icons/arrangeverticalsquare.png';
+  static const String searchIcon = 'assets/icons/search.png';
+  static const String vanIcon = 'assets/icons/van.png';
 }
