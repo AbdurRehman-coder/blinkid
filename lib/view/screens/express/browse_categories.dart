@@ -2,7 +2,7 @@
 
 import 'package:blinkid/resources/constants/app_colors.dart';
 import 'package:blinkid/resources/constants/images_path.dart';
-import 'package:blinkid/view/widgets/product_card_widget.dart';
+import 'package:blinkid/view/widgets/express_product_card_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../resources/constants/text_styles.dart';

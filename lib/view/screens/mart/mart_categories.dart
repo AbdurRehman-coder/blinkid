@@ -2,9 +2,11 @@
 
 import 'package:blinkid/resources/constants/app_colors.dart';
 import 'package:blinkid/resources/constants/images_path.dart';
-import 'package:blinkid/view/widgets/product_card_widget.dart';
+import 'package:blinkid/view/widgets/express_product_card_widget.dart';
+import 'package:blinkid/view/widgets/mart_product_card_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import '../../../resources/constants/text_styles.dart';
 
 class MartCategoriesScreen extends StatelessWidget {
@@ -12,9 +14,10 @@ class MartCategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Column(
       children: [
-        /// =========== Best Seller ============== ///
+        /// =========== Get Ready For Eid ============== ///
         Padding(
           padding: const EdgeInsets.only(left: 16.0, right: 16, top: 20),
           child: Column(
@@ -23,111 +26,38 @@ class MartCategoriesScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    ' Best Seller',
+                    'Get Ready For Eid',
                     style: AppTextStyle.gilroyLight.copyWith(
                         fontSize: 18,
-                        fontWeight: FontWeight.bold
+                        fontWeight: FontWeight.normal
                     ),
                   ),
-                  Text(
-                    'See more ',
-                    style: AppTextStyle.gilroyLight.copyWith(
-                        fontSize: 13,
-                        color: AppColors.primaryBlueColor
-                    ),
-                  ),
+                  Icon(Icons.arrow_forward_sharp, color: Colors.black,),
                 ],
               ),
-              SizedBox(height: 08,),
+              SizedBox(height: size.height * 0.02,),
 
-              Row(children: [
-                SizedBox(height: 12,),
-                Expanded(
-                    child: ExpressProductCard(image: AppImages.bagImage,)),
-                Expanded(
-                    child: ExpressProductCard(image: AppImages.headphoneImage,)),
-              ],),
-            ],
-          ),
-        ),
+              Container(
+                height: size.height * 0.36,
+                // color: Colors.amberAccent,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  primary: false,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                    itemBuilder: (context, index){
+                    return Container(
+                      width: size.width * 0.48,
+                        child: MartProductCard(image: AppImages.pinkBagImage,));
 
-
-        /// =========== New Arrival ============== ///
-        Padding(
-          padding: const EdgeInsets.only(left: 16.0, right: 16, top: 20),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    ' New Arrivals',
-                    style: AppTextStyle.gilroyLight.copyWith(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold
-                    ),
-                  ),
-                  Text(
-                    'See more ',
-                    style: AppTextStyle.gilroyLight.copyWith(
-                        fontSize: 13,
-                        color: AppColors.primaryBlueColor
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 08,),
-
-              Row(children: [
-                SizedBox(height: 12,),
-                Expanded(
-                    child: ExpressProductCard(image: AppImages.bagImage,)),
-                Expanded(
-                    child: ExpressProductCard(image: AppImages.headphoneImage,)),
-              ],),
-            ],
-          ),
-        ),
-
-
-        /// =========== Shop By Brand ============== ///
-        Container(
-          color: AppColors.whiteLightBackground,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 16.0, right: 16,),
-            child: Column(
-              children: [
-                SizedBox(height: 20,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Shop By Brands ',
-                      style: AppTextStyle.gilroyLight.copyWith(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Icon(Icons.arrow_forward),
-                  ],
+                    },
                 ),
-
-                SizedBox(height: 5,),
-                Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset(AppImages.babyganicsImage, scale: 3.8,),
-                    Image.asset(AppImages.babyMagicImage, scale: 3.8,),
-                    Image.asset(AppImages.aventImage, scale: 3.8,),
-                  ],
-                ),
-                const SizedBox(height: 10,),
-
-              ],
-            ),
+              ),
+            ],
           ),
         ),
-        /// =========== New Arrival ============== ///
+
+        /// ===========Eid Essential============== ///
         Padding(
           padding: const EdgeInsets.only(left: 16.0, right: 16, top: 20),
           child: Column(
@@ -136,42 +66,116 @@ class MartCategoriesScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    ' New Arrivals',
+                    'Eid Essential',
                     style: AppTextStyle.gilroyLight.copyWith(
                         fontSize: 18,
-                        fontWeight: FontWeight.bold
+                        fontWeight: FontWeight.normal
                     ),
                   ),
-                  Text(
-                    'See more ',
-                    style: AppTextStyle.gilroyLight.copyWith(
-                        fontSize: 13,
-                        color: AppColors.primaryBlueColor
-                    ),
-                  ),
+                  Icon(Icons.arrow_forward_sharp, color: Colors.black,),
                 ],
               ),
-              SizedBox(height: 08,),
-              Row(children: [
-                SizedBox(height: 12,),
-                Expanded(
-                    child: ExpressProductCard(image: AppImages.bagImage,)),
-                Expanded(
-                    child: ExpressProductCard(image: AppImages.headphoneImage,)),
-              ],),
+              SizedBox(height: size.height * 0.02,),
 
-              SizedBox(height: 08,),
-              Row(children: [
-                SizedBox(height: 12,),
-                Expanded(
-                    child: ExpressProductCard(image: AppImages.bagImage,)),
-                Expanded(
-                    child: ExpressProductCard(image: AppImages.headphoneImage,)),
-              ],),
+              Container(
+                height: size.height * 0.36,
+                // color: Colors.amberAccent,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  primary: false,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  itemBuilder: (context, index){
+                    return Container(
+                        width: size.width * 0.48,
+                        child: MartProductCard(image: AppImages.pinkBagImage,));
+
+                  },
+                ),
+              ),
             ],
           ),
         ),
 
+        /// =========== Under 299 ============== ///
+        Padding(
+          padding: const EdgeInsets.only(left: 16.0, right: 16, top: 20),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Under 299',
+                    style: AppTextStyle.gilroyLight.copyWith(
+                        fontSize: 18,
+                        fontWeight: FontWeight.normal
+                    ),
+                  ),
+                  Icon(Icons.arrow_forward_sharp, color: Colors.black,),
+                ],
+              ),
+              SizedBox(height: size.height * 0.02,),
+
+              Container(
+                height: size.height * 0.36,
+                // color: Colors.amberAccent,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  primary: false,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  itemBuilder: (context, index){
+                    return Container(
+                        width: size.width * 0.48,
+                        child: MartProductCard(image: AppImages.pinkBagImage,));
+
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+
+        /// =========== Hungry ============== ///
+        Padding(
+          padding: const EdgeInsets.only(left: 16.0, right: 16, top: 20),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Hungry?',
+                    style: AppTextStyle.gilroyLight.copyWith(
+                        fontSize: 18,
+                        fontWeight: FontWeight.normal
+                    ),
+                  ),
+                  Icon(Icons.arrow_forward_sharp, color: Colors.black,),
+                ],
+              ),
+              SizedBox(height: size.height * 0.02,),
+
+              Container(
+                height: size.height * 0.36,
+                // color: Colors.amberAccent,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  primary: false,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  itemBuilder: (context, index){
+                    return Container(
+                        width: size.width * 0.48,
+                        child: MartProductCard(image: AppImages.pinkBagImage,));
+
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }

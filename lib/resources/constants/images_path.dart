@@ -25,6 +25,7 @@ class AppImages {
   static const String babyganicsImage = 'assets/images/babyganics.png';
   static const String babyMagicImage = 'assets/images/baby_magic.png';
   static const String aventImage = 'assets/images/avent.png';
+  static const String pinkBagImage = 'assets/images/pink_bagg.png';
 
 
 

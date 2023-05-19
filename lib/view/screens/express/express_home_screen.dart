@@ -54,15 +54,20 @@ class _ExpressHomeScreenState extends State<ExpressHomeScreen> {
                     children: [
                       Row(
                         children: [
-                          Icon(
-                            Icons.arrow_back_outlined,
-                            color: AppColors.primaryBlackColor,
+                          InkWell(
+                            onTap: (){
+                              Navigator.pop(context);
+                            },
+                            child: Icon(
+                              Icons.arrow_back_outlined,
+                              color: AppColors.primaryBlackColor,
+                            ),
                           ),
                           SizedBox(
-                            width: 10,
+                            width: 20,
                           ),
                           Text(
-                            'Blinkid',
+                            'Blinkid Express',
                             style: AppTextStyle.gilroyLight
                                 .copyWith(fontSize: 18, color: AppColors.primaryBlueColor),
                           ),

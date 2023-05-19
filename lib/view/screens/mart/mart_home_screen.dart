@@ -38,9 +38,10 @@ class _MartHomeScreenState extends State<MartHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: AppColors.whiteLightBackground,
+      // backgroundColor: Colors.white30,
       drawer: CustomDrawer(),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
           children: [
             Padding(
@@ -55,17 +56,22 @@ class _MartHomeScreenState extends State<MartHomeScreen> {
                     children: [
                       Row(
                         children: [
-                          Icon(
-                            Icons.arrow_back_outlined,
-                            color: AppColors.primaryBlackColor,
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.pop(context);
+                            },
+                            child: Icon(
+                              Icons.arrow_back_outlined,
+                              color: AppColors.primaryBlackColor,
+                            ),
                           ),
                           SizedBox(
-                            width: 10,
+                            width: 20,
                           ),
                           Text(
-                            'Blinkid',
+                            'Blinkid Mart',
                             style: AppTextStyle.gilroyLight
-                                .copyWith(fontSize: 18, color: AppColors.primaryBlueColor),
+                                .copyWith(fontSize: 18, color: AppColors.primaryRedColor),
                           ),
                         ],
                       ),
@@ -74,12 +80,17 @@ class _MartHomeScreenState extends State<MartHomeScreen> {
                           Text(
                             'Delivery',
                             style: AppTextStyle.gilroyLight
-                                .copyWith(fontSize: 12, color: AppColors.primaryBlackColor),
+                                .copyWith(fontSize: 12,
+                                color: AppColors.primaryBlackColor,
+                                fontWeight: FontWeight.w900,
+                            ),
                           ),
                           Text(
-                            'Same Day',
+                            '72 Hours',
                             style: AppTextStyle.gilroyLight
-                                .copyWith(fontSize: 12, color: AppColors.primaryRedColor),
+                                .copyWith(fontSize: 12,
+                                color: AppColors.primaryBlueColor,
+                            ),
                           ),
                         ],
                       ),
@@ -140,6 +151,7 @@ class _MartHomeScreenState extends State<MartHomeScreen> {
 
             Container(
               color: AppColors.whiteLightBackground,
+              // color: Colors.white12,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -196,6 +208,47 @@ class _MartHomeScreenState extends State<MartHomeScreen> {
                   SizedBox(height: 35,),
 
                   MartCategoriesScreen(),
+
+                  SizedBox(height: 30,),
+                  isBrowseCategoriesShow == false
+                      ? Padding(
+                    padding: const EdgeInsets.only(left: 16.0, right: 16,),
+
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Couldn’t find your product?',
+                          style: AppTextStyle.gilroyLight.copyWith(
+                              fontSize: 18,
+                              color: AppColors.primaryBlackColor
+                          ),),
+                        SizedBox(height: 08,),
+                        ElevatedButton(
+                          onPressed: () {
+                            // Add your button's functionality here
+                            // setState(() {
+                            //   isBrowseCategoriesShow = true;
+                            // });
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.blue,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                          child: Text(
+                            'Browse Categories',
+                            style: AppTextStyle.gilroyLight.copyWith(
+                                fontSize: 18,
+                                color: Colors.white
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                      : Container(),
+                  SizedBox(height: 12,),
 
                 ],
               ),
