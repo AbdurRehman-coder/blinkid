@@ -13,6 +13,7 @@ class AppColors{
   static const Color whiteLightBackground =  Color(0xFFEBEBEB);
   static Color greyContainerBackground =  Colors.grey.shade200;
   static const Color greyText =  Color(0xFFA9B8C6);
+  static const Color pinkContainer =  Color(0xFFFFF5F7);
 
 
   static LinearGradient getGradientColor() {

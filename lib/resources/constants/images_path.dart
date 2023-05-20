@@ -27,6 +27,7 @@ class AppImages {
   static const String aventImage = 'assets/images/avent.png';
   static const String pinkbag = 'assets/images/pinkbag.png';
   static const String camaflougebag = 'assets/images/camafllougebag.png';
+  static const String reviewpeople = 'assets/images/review_people.png';
 
   ///Cateaories Images
   static const String colorNicker = 'assets/images/color_nicker.png';

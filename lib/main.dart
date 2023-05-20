@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       // home: SplashScreen(),
       // initialRoute: Routes.splash,
-      initialRoute: Routes.shoppingCart,
+      initialRoute: Routes.productDetail,
       onGenerateRoute: Routes.generateRoute,
     );
   }

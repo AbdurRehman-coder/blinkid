@@ -10,6 +10,7 @@ import 'package:blinkid/view/screens/wrappingsheet/categories.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../view/screens/cart/product_detail.dart';
 import '../../view/screens/cart/shopping_cart.dart';
 import '../../view/screens/express/express_home_screen.dart';
 import '../../view/screens/ratings/writereview.dart';
@@ -32,6 +33,7 @@ class Routes {
   static const String ratingAndReviews = 'ratingAndReviews';
   static const String writeReviews = 'writeReviews';
   static const String shoppingCart = 'shoppingCart';
+  static const String productDetail = 'productDetail';
 
 
   /// Route is data type
@@ -76,6 +78,9 @@ class Routes {
         case shoppingCart:
         return MaterialPageRoute(
             builder: (BuildContext context) => const ShoppingCart());
+        case productDetail:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const ProductDetail());
 
         /// default
       default:
