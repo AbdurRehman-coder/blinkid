@@ -1,5 +1,4 @@
 
-import 'package:blinkid/view/screens/Ratings/rating_and_reviews.dart';
 import 'package:blinkid/view/screens/auth/login_screen.dart';
 import 'package:blinkid/view/screens/auth/verify_otp_screen.dart';
 import 'package:blinkid/view/screens/auth/welcome_screen.dart';
@@ -13,6 +12,7 @@ import 'package:flutter/material.dart';
 import '../../view/screens/cart/product_detail.dart';
 import '../../view/screens/cart/shopping_cart.dart';
 import '../../view/screens/express/express_home_screen.dart';
+import '../../view/screens/ratings/rating_and_reviews.dart';
 import '../../view/screens/ratings/writereview.dart';
 import '../../view/screens/splash_screens/splash_screen.dart';
 import '../../view/screens/wrappingsheet/wrappingsheet.dart';
