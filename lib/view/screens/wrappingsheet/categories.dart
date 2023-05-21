@@ -52,8 +52,9 @@ class _Categories extends State<Categories> with TickerProviderStateMixin {
   bool isBrowseCategoriesShow = false;
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: Colors.white,
       drawer: CustomDrawer(),
       body: Stack(
         children: [
@@ -90,7 +91,7 @@ class _Categories extends State<Categories> with TickerProviderStateMixin {
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 54,
+                  height: size.height * 0.06,
                   decoration: BoxDecoration(
                       color: AppColors.greyContainerBackground,
                       borderRadius: BorderRadius.circular(10)),
@@ -287,8 +288,8 @@ class _Categories extends State<Categories> with TickerProviderStateMixin {
             bottom: 18,
             right: MediaQuery.of(context).size.width * 0.37,
             child: Container(
-              height: 53,
-              width: 117,
+              height: size.height * 0.07,
+              width: size.height * 0.18,
               decoration: BoxDecoration(
                   color: AppColors.primaryRedColor,
                   borderRadius: BorderRadius.circular(85)),

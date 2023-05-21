@@ -29,7 +29,8 @@ class AppImages {
 
   // static const String pinkbag = 'assets/images/pinkbag.png';
   static const String camaflougebag = 'assets/images/camafllougebag.png';
-  static const String reviewpeople = 'assets/images/review_people.png';
+  static const String reviewpeople = 'assets/images/review_peoples.png';
+  static const String pinkAndWhite = 'assets/images/pink_and_white.png';
 
   ///Cateaories Images
   static const String colorNicker = 'assets/images/color_nicker.png';

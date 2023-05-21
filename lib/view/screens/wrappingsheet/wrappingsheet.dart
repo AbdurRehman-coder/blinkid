@@ -1,4 +1,3 @@
-
 import 'package:blinkid/resources/constants/app_colors.dart';
 import 'package:blinkid/view/screens/mart/mart_categories.dart';
 import 'package:blinkid/view/widgets/custom_drawer_widget.dart';
@@ -53,7 +52,6 @@ class _FashionWrappingSheetState extends State<FashionWrappingSheet> {
                   SizedBox(
                     height: 14,
                   ),
-
                   TextField(
                     controller: _searchController,
                     decoration: InputDecoration(
@@ -88,14 +86,10 @@ class _FashionWrappingSheetState extends State<FashionWrappingSheet> {
                   SizedBox(
                     height: 8,
                   ),
-
                 ],
               ),
             ),
-
-
             Container(
-
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -104,43 +98,62 @@ class _FashionWrappingSheetState extends State<FashionWrappingSheet> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                      Row(children: [
-                        Text("Sort by",style: AppTextStyle.gilroyLight.copyWith(
-                      fontSize: 14,
-                      color: AppColors.primaryBlackColor,
-                          fontWeight: FontWeight.w700
-                    ),),
-                        const ImageIcon(AssetImage(AppImages.verticalsquare))
-                      ],),
+                        Row(
+                          children: [
+                            Text(
+                              "Sort by",
+                              style: AppTextStyle.gilroyLight.copyWith(
+                                  fontSize: 14,
+                                  color: AppColors.primaryBlackColor,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                            const ImageIcon(AssetImage(AppImages.verticalsquare))
+                          ],
+                        ),
                         IntrinsicHeight(
                           child: Row(
                             children: [
-                              Row(children: [
-                                Text("View",style: AppTextStyle.gilroyLight.copyWith(
-                                    fontSize: 14,
-                                    color: AppColors.primaryBlackColor,
-                                    fontWeight: FontWeight.w700
-                                ),),
-                                const SizedBox(width: 3,),
-                                const ImageIcon(
+                              Row(
+                                children: [
+                                  Text(
+                                    "View",
+                                    style: AppTextStyle.gilroyLight.copyWith(
+                                        fontSize: 14,
+                                        color: AppColors.primaryBlackColor,
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                  const SizedBox(
+                                    width: 3,
+                                  ),
+                                  const ImageIcon(
                                     AssetImage(AppImages.squarebox),
-                                size: 14,),
-                              ],),
-                            const VerticalDivider(),
+                                    size: 14,
+                                  ),
+                                ],
+                              ),
+                              const VerticalDivider(),
                               GestureDetector(
-                                onTap: (){
+                                onTap: () {
                                   Navigator.pushNamed(context, Routes.categories);
                                 },
                                 child: Row(
                                   children: [
-                                  Text("Filter",style: AppTextStyle.gilroyLight.copyWith(
-                                      fontSize: 14,
-                                      color: AppColors.primaryBlackColor,
-                                      fontWeight: FontWeight.w700
-                                  ),),
-                                  const SizedBox(width: 3,),
-                                  const ImageIcon(AssetImage(AppImages.filter),size: 14,)
-                                ],),
+                                    Text(
+                                      "Filter",
+                                      style: AppTextStyle.gilroyLight.copyWith(
+                                          fontSize: 14,
+                                          color: AppColors.primaryBlackColor,
+                                          fontWeight: FontWeight.w700),
+                                    ),
+                                    const SizedBox(
+                                      width: 3,
+                                    ),
+                                    const ImageIcon(
+                                      AssetImage(AppImages.filter),
+                                      size: 14,
+                                    )
+                                  ],
+                                ),
                               ),
                             ],
                           ),
@@ -152,36 +165,68 @@ class _FashionWrappingSheetState extends State<FashionWrappingSheet> {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Column(
                       children: [
-                        Row(children: [
-                          SizedBox(height: 12,),
-                          Expanded(
-                              child: ExpressProductCard(image: AppImages.pinkBagImage,)),
-                          Expanded(
-                              child: ExpressProductCard(image: AppImages.camaflougebag,)),
-                        ],),
-                        Row(children: [
-                          SizedBox(height: 12,),
-                          Expanded(
-                              child: ExpressProductCard(image: AppImages.camaflougebag,)),
-                          Expanded(
-                              child: ExpressProductCard(image: AppImages.camaflougebag,)),
-                        ],),
-
-                        Row(children: [
-                          SizedBox(height: 12,),
-                          Expanded(
-                              child: ExpressProductCard(image: AppImages.camaflougebag,)),
-                          Expanded(
-                              child: ExpressProductCard(image: AppImages.camaflougebag,)),
-                        ],),
+                        Row(
+                          children: [
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Expanded(
+                                child: InkWell(
+                                  onTap: (){
+                                    Navigator.pushNamed(context, Routes.productDetail);
+                                  },
+                                  child: ExpressProductCard(
+                              image: AppImages.pinkBagImage,
+                            ),
+                                )),
+                            Expanded(
+                                child: InkWell(
+                                  onTap: (){
+                                    Navigator.pushNamed(context, Routes.productDetail);
+                                  },
+                                  child: ExpressProductCard(
+                              image: AppImages.camaflougebag,
+                            ),
+                                )),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Expanded(
+                                child: ExpressProductCard(
+                              image: AppImages.camaflougebag,
+                            )),
+                            Expanded(
+                                child: ExpressProductCard(
+                              image: AppImages.camaflougebag,
+                            )),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Expanded(
+                                child: ExpressProductCard(
+                              image: AppImages.camaflougebag,
+                            )),
+                            Expanded(
+                                child: ExpressProductCard(
+                              image: AppImages.camaflougebag,
+                            )),
+                          ],
+                        ),
                       ],
                     ),
                   )
-
-
                 ],
               ),
             ),
+            SizedBox(height: 20,),
           ],
         ),
       ),

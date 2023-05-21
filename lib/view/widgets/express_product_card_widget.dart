@@ -118,7 +118,7 @@ class ExpressProductCard extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                 decoration: BoxDecoration(
-                  color: AppColors.primaryRedColor.withOpacity(0.8),
+                  color: AppColors.primaryRedColor.withOpacity(0.6),
                   borderRadius: BorderRadius.circular(5),
                 ),
                 child: Text(

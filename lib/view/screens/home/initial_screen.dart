@@ -83,7 +83,7 @@ class _InitialHomeScreenState extends State<InitialHomeScreen> {
               SizedBox(height: 8,),
               InkWell(
                 onTap: (){
-                  Navigator.pushNamed(context, Routes.martHomeScreen);
+                  // Navigator.pushNamed(context, Routes.martHomeScreen);
                 },
                 child: Image.asset(
                   AppImages.blinkidMartHomeImage,

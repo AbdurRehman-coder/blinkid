@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../../resources/constants/images_path.dart';
 import '../../../resources/constants/text_styles.dart';
+import '../../../resources/utils/routes.dart';
 import 'browse_categories.dart';
 
 
@@ -149,17 +150,22 @@ class _ExpressHomeScreenState extends State<ExpressHomeScreen> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 16.0, right: 16, top: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Shop By Categories ',
-                          style: AppTextStyle.gilroyBold.copyWith(
-                            fontSize: 18,
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.pushNamed(context, Routes.categories);
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Shop By Categories ',
+                            style: AppTextStyle.gilroyBold.copyWith(
+                              fontSize: 18,
+                            ),
                           ),
-                        ),
-                        Icon(Icons.arrow_forward),
-                      ],
+                          Icon(Icons.arrow_forward),
+                        ],
+                      ),
                     ),
                   ),
                   Padding(
@@ -174,25 +180,31 @@ class _ExpressHomeScreenState extends State<ExpressHomeScreen> {
                         crossAxisSpacing: 10.0,
                       ),
                       itemBuilder: (BuildContext context, int index) {
-                        return Card(
-                            color: Colors.white,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                            Image.asset(
-                              imageCards[index].imageAsset,
-                              width: 50,
-                              height: 50,
-                              fit: BoxFit.cover,
-                            ),
-                            SizedBox(height: 5,),
-                            Text(imageCards[index].name,
-                              style: AppTextStyle.gilroyLight.copyWith(
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),),
-                          ]),
+                        return InkWell(
+                          onTap: (){
+                            Navigator.pushNamed(context, Routes.fashionWrappingSheet);
+
+                          },
+                          child: Card(
+                              color: Colors.white,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                              Image.asset(
+                                imageCards[index].imageAsset,
+                                width: 50,
+                                height: 50,
+                                fit: BoxFit.cover,
+                              ),
+                              SizedBox(height: 5,),
+                              Text(imageCards[index].name,
+                                style: AppTextStyle.gilroyLight.copyWith(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),),
+                            ]),
+                          ),
                         );
                       },
                     ),

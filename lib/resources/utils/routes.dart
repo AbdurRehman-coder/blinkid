@@ -13,7 +13,7 @@ import '../../view/screens/cart/product_detail.dart';
 import '../../view/screens/cart/shopping_cart.dart';
 import '../../view/screens/express/express_home_screen.dart';
 import '../../view/screens/ratings/rating_and_reviews.dart';
-import '../../view/screens/ratings/writereview.dart';
+import '../../view/screens/ratings/write_review.dart';
 import '../../view/screens/splash_screens/splash_screen.dart';
 import '../../view/screens/wrappingsheet/wrappingsheet.dart';
 
