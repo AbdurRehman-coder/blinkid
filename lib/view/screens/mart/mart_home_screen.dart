@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import '../../../resources/constants/images_path.dart';
 import '../../../resources/constants/text_styles.dart';
+import '../../../resources/utils/routes.dart';
 import '../express/browse_categories.dart';
 
 class MartHomeScreen extends StatefulWidget {
@@ -182,25 +183,33 @@ class _MartHomeScreenState extends State<MartHomeScreen> {
                         crossAxisSpacing: 10.0,
                       ),
                       itemBuilder: (BuildContext context, int index) {
-                        return Card(
-                          color: Colors.white,
-                          child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image.asset(
-                                  imageCards[index].imageAsset,
-                                  width: 50,
-                                  height: 50,
-                                  fit: BoxFit.cover,
-                                ),
-                                SizedBox(height: 5,),
-                                Text(imageCards[index].name,
-                                  style: AppTextStyle.gilroyLight.copyWith(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                  ),),
-                              ]),
+                        return GestureDetector(
+
+                           onTap: (){
+                             Navigator.pushNamed(context, Routes.fashionWrappingSheet);
+                           },
+
+
+                          child: Card(
+                            color: Colors.white,
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    imageCards[index].imageAsset,
+                                    width: 50,
+                                    height: 50,
+                                    fit: BoxFit.cover,
+                                  ),
+                                  SizedBox(height: 5,),
+                                  Text(imageCards[index].name,
+                                    style: AppTextStyle.gilroyLight.copyWith(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),),
+                                ]),
+                          ),
                         );
                       },
                     ),

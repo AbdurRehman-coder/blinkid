@@ -5,11 +5,17 @@ import 'package:blinkid/view/screens/auth/welcome_screen.dart';
 import 'package:blinkid/view/screens/home/initial_screen.dart';
 import 'package:blinkid/view/screens/mart/mart_home_screen.dart';
 import 'package:blinkid/view/screens/splash_screens/location_access_screen.dart';
+import 'package:blinkid/view/screens/wrappingsheet/categories.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../view/screens/cart/product_detail.dart';
+import '../../view/screens/cart/shopping_cart.dart';
 import '../../view/screens/express/express_home_screen.dart';
+import '../../view/screens/ratings/rating_and_reviews.dart';
+import '../../view/screens/ratings/writereview.dart';
 import '../../view/screens/splash_screens/splash_screen.dart';
+import '../../view/screens/wrappingsheet/wrappingsheet.dart';
 
 class Routes {
   static final mainNavigatorKey = GlobalKey<NavigatorState>();
@@ -22,6 +28,12 @@ class Routes {
   static const String initialHomeScreen = 'initial_home_screen';
   static const String expressHomeScreen = 'express_home_screen';
   static const String martHomeScreen = 'mart_home_screen';
+  static const String fashionWrappingSheet = 'FashionWrappingSheet';
+  static const String categories = 'Categories';
+  static const String ratingAndReviews = 'ratingAndReviews';
+  static const String writeReviews = 'writeReviews';
+  static const String shoppingCart = 'shoppingCart';
+  static const String productDetail = 'productDetail';
 
 
   /// Route is data type
@@ -51,6 +63,24 @@ class Routes {
         case martHomeScreen:
         return MaterialPageRoute(
             builder: (BuildContext context) => MartHomeScreen());
+        case fashionWrappingSheet:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const FashionWrappingSheet());
+        case categories:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const Categories());
+        case ratingAndReviews:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const RatingAndReviews());
+        case writeReviews:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const WriteReviews());
+        case shoppingCart:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const ShoppingCart());
+        case productDetail:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const ProductDetail());
 
         /// default
       default:

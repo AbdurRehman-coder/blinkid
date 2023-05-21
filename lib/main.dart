@@ -3,11 +3,11 @@ import 'package:blinkid/view/screens/splash_screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  // const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true
       ),
       // home: SplashScreen(),
-      // initialRoute: Routes.splash,
-      initialRoute: Routes.welcomeScreen,
+      initialRoute: Routes.splash,
+      // initialRoute: Routes.productDetail,
       onGenerateRoute: Routes.generateRoute,
     );
   }
