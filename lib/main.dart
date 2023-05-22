@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true
       ),
       // home: SplashScreen(),
-      initialRoute: Routes.splash,
-      // initialRoute: Routes.initialHomeScreen,
+      // initialRoute: Routes.splash,
+      initialRoute: Routes.initialHomeScreen,
       onGenerateRoute: Routes.generateRoute,
     );
   }

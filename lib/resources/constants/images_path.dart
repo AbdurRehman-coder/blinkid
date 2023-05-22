@@ -31,6 +31,7 @@ class AppImages {
   static const String camaflougebag = 'assets/images/camafllougebag.png';
   static const String reviewpeople = 'assets/images/review_peoples.png';
   static const String pinkAndWhite = 'assets/images/pink_and_white.png';
+  static const String profilePicture = 'assets/images/profile_picture.png';
 
   ///Cateaories Images
   static const String colorNicker = 'assets/images/color_nicker.png';
@@ -53,4 +54,8 @@ class AppImages {
   static const String verticalsquare = 'assets/icons/arrangeverticalsquare.png';
   static const String searchIcon = 'assets/icons/search.png';
   static const String vanIcon = 'assets/icons/van.png';
+  static const String voucherIcon = 'assets/icons/voucher_icon.png';
+  static const String paymentMethodIcon = 'assets/icons/payment_method_icon.png';
+  static const String helpIcon = 'assets/icons/messagequestion.png';
+  static const String shopIcon = 'assets/icons/shop.png';
 }

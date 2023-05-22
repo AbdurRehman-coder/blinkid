@@ -4,6 +4,7 @@ import 'package:blinkid/resources/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 import '../../../resources/constants/text_styles.dart';
+import '../../widgets/custom_drawer_widget.dart';
 
 class InitialHomeScreen extends StatefulWidget {
   const InitialHomeScreen({Key? key}) : super(key: key);
@@ -18,6 +19,7 @@ class _InitialHomeScreenState extends State<InitialHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: CustomDrawer(),
       body: Container(
         decoration: BoxDecoration(
           gradient: AppColors.getGradientColor(),
